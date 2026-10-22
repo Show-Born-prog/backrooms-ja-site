@@ -1,5 +1,5 @@
-// Public candidate: keep captions outside the YouTube embedded player.
+// The site owner chose overlay captions despite YouTube's embedded-player overlay restriction.
 export const SITE_CONFIG = {
-  defaultSubtitleMode: 'below',
-  allowOverlaySubtitles: false,
+  defaultSubtitleMode: 'overlay',
+  allowOverlaySubtitles: true,
 };

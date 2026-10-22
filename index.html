@@ -47,8 +47,8 @@
           <div class="controls-grid">
             <fieldset class="control-group mode-group">
               <legend>字幕の位置</legend>
-              <label class="choice"><input type="radio" name="subtitle-mode" value="below" checked><span>映像の下</span></label>
-              <label class="choice"><input id="overlay-option" type="radio" name="subtitle-mode" value="overlay"><span>映像内</span></label>
+              <label class="choice"><input type="radio" name="subtitle-mode" value="below"><span>映像の下</span></label>
+              <label class="choice"><input id="overlay-option" type="radio" name="subtitle-mode" value="overlay" checked><span>映像内</span></label>
             </fieldset>
             <div id="overlay-position-group" class="control-group position-group" hidden><label for="overlay-position">映像内字幕の上下位置</label><div class="position-inputs"><input id="overlay-position" type="range" min="0" max="1" step="1" value="0"><label for="overlay-position-pixels"><input id="overlay-position-pixels" type="number" min="0" max="1" step="1" value="0"> px</label></div><p class="control-hint">動画枠を基準にした位置。字幕を直接ドラッグしても調整できます。</p></div>
             <div class="control-group size-group"><label for="font-size">文字サイズ <output id="font-size-value" for="font-size">80%</output></label><input id="font-size" type="range" min="10" max="300" step="10" value="80"></div>
@@ -76,7 +76,6 @@
 
     <footer class="site-footer">
       <p>このサイトは非公式・非営利のファンプロジェクトです。映像は <a href="https://www.youtube.com/@kanepixels" target="_blank" rel="noopener noreferrer">Kane Pixelsの公式チャンネル</a> によるもので、本サイトの日本語字幕はファン制作です。Kane Pixelsの公式サイトではありません。</p>
-      <p>字幕の公開許諾は未確認です。現在はローカル開発版で、一般公開していません。</p>
       <p class="feedback-note">聞き取れなかった部分は字幕を空欄にしています。聞き取りや誤訳・表記についてのご意見は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSc9NBtyHeiutR_nDntLzw1rWmDzrtnpNq40uPOiIA_jsmNE9Q/viewform" target="_blank" rel="noopener noreferrer">字幕のご意見フォーム<span aria-hidden="true"> ↗</span></a>からお知らせください。</p>
       <p class="contact-note">サイトに関するお問い合わせ：<a href="mailto:fakeseikin@gmail.com">fakeseikin@gmail.com</a></p>
     </footer>
