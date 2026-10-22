@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10110e">
+  <meta name="description" content="Kane PixelsのBackroomsシリーズを日本語字幕とともに視聴する非公式ファンプロジェクト。">
+  <title>BACKROOMS / 日本語字幕</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./src/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#watch">視聴エリアへ移動</a>
+  <div class="site-wrap">
+    <header class="site-header">
+      <div class="eyebrow"><span class="signal-dot" aria-hidden="true"></span> UNOFFICIAL FAN PROJECT</div>
+      <p class="creator-credit">Kane Pixels版</p>
+      <h1>THE BACKROOMS<span class="title-slash"> / </span><span class="title-ja">日本語字幕</span></h1>
+      <div class="header-rule"></div>
+      <p class="site-intro">Kane Pixelsの公式YouTube動画に、自作の日本語字幕を同期表示します。</p>
+    </header>
+
+    <main class="main-grid">
+      <section class="watch-column" id="watch" aria-labelledby="watch-heading">
+        <div class="section-kicker"><span>WATCH</span></div>
+        <div class="watch-heading-row">
+          <div>
+            <p class="now-label">NOW SELECTED <span class="line" aria-hidden="true"></span> <span id="current-number">01</span></p>
+            <h2 id="watch-heading">The Backrooms (Found Footage)</h2>
+          </div>
+          <a id="official-link" class="official-link" href="https://www.youtube.com/@kanepixels" target="_blank" rel="noopener noreferrer">公式動画を開く <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="viewer" id="viewer">
+          <div id="player-shell" class="player-shell">
+            <div id="player" class="player" aria-label="YouTube動画プレーヤー"></div>
+            <div id="overlay-caption" class="overlay-caption" aria-label="日本語字幕" aria-live="off" hidden><span id="overlay-caption-text" class="caption-text"></span></div>
+            <div id="player-placeholder" class="player-placeholder"><span class="placeholder-mark" aria-hidden="true">▣</span><span>プレーヤーを準備しています…</span></div>
+          </div>
+          <div id="below-caption" class="below-caption" aria-label="日本語字幕" aria-live="off"><span id="below-caption-text" class="caption-text"></span></div>
+          <div class="viewer-toolbar"><span class="viewer-caption-label">JP SUBTITLES</span><button id="fullscreen-button" type="button" class="utility-button"><span class="fullscreen-icon" aria-hidden="true">⛶</span><span id="fullscreen-label">全画面表示</span></button></div>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite">字幕とプレーヤーを読み込んでいます…</p>
+
+        <details class="controls-panel" aria-label="視聴設定">
+          <summary class="controls-title"><span>VIEWING OPTIONS</span><span class="controls-summary-end"><span class="when-closed">設定を開く</span><span class="when-open">設定を閉じる</span><span class="disclosure-icon" aria-hidden="true"></span></span></summary>
+          <div class="controls-grid">
+            <fieldset class="control-group mode-group">
+              <legend>字幕の位置</legend>
+              <label class="choice"><input type="radio" name="subtitle-mode" value="below" checked><span>映像の下</span></label>
+              <label class="choice"><input id="overlay-option" type="radio" name="subtitle-mode" value="overlay"><span>映像内</span></label>
+            </fieldset>
+            <div id="overlay-position-group" class="control-group position-group" hidden><label for="overlay-position">映像内字幕の上下位置</label><div class="position-inputs"><input id="overlay-position" type="range" min="0" max="1" step="1" value="0"><label for="overlay-position-pixels"><input id="overlay-position-pixels" type="number" min="0" max="1" step="1" value="0"> px</label></div><p class="control-hint">動画枠を基準にした位置。字幕を直接ドラッグしても調整できます。</p></div>
+            <div class="control-group size-group"><label for="font-size">文字サイズ <output id="font-size-value" for="font-size">80%</output></label><input id="font-size" type="range" min="10" max="300" step="10" value="80"></div>
+            <div class="control-group"><label for="font-family">フォント</label><select id="font-family"><option value="noto">Noto Sans JP系</option><option value="youtube">Roboto + 和文ゴシック</option><option value="ud">BIZ UDゴシック系</option><option value="serif">和文明朝系</option><option value="mono">等幅系</option></select></div>
+            <div class="control-group"><label for="font-weight">文字の太さ</label><select id="font-weight"><option value="400">標準</option><option value="500">やや太い</option><option value="600">太い</option><option value="700">かなり太い</option></select></div>
+            <div class="control-group"><label for="letter-spacing">字間</label><select id="letter-spacing"><option value="tight">狭い</option><option value="standard">標準</option><option value="wide">広い</option></select></div>
+            <div class="control-group"><label for="line-spacing">行間</label><select id="line-spacing"><option value="compact">狭い</option><option value="standard">標準</option><option value="wide">広い</option></select></div>
+            <div class="control-group"><label for="text-color">文字色</label><select id="text-color"><option value="white">白</option><option value="yellow">黄</option><option value="cyan">水色</option><option value="green">緑</option></select></div>
+            <div class="control-group"><label for="text-opacity">文字の不透明度</label><select id="text-opacity"><option value="100">100%</option><option value="75">75%</option><option value="50">50%</option></select></div>
+            <div class="control-group"><label for="background-color">背景色</label><select id="background-color"><option value="black">黒</option><option value="navy">濃紺</option></select></div>
+            <div class="control-group"><label for="background-opacity">背景の不透明度</label><select id="background-opacity"><option value="0">0%</option><option value="25">25%</option><option value="50">50%</option><option value="75">75%</option><option value="100">100%</option></select></div>
+            <div class="control-group"><label for="edge-style">文字の縁</label><select id="edge-style"><option value="outline">縁取り</option><option value="shadow" selected>影</option><option value="none">なし</option></select></div>
+          </div>
+          <button id="reset-appearance" class="reset-button" type="button">字幕設定を初期値に戻す</button>
+          <p id="mode-note" class="mode-note" hidden>映像内字幕は現在、運営設定により無効です。</p>
+        </details>
+        <p class="mobile-note">モバイルブラウザでは全画面表示が制限される場合があります。字幕が表示されない場合は通常表示に戻してご覧ください。</p>
+      </section>
+
+      <aside class="episodes-column" aria-labelledby="episodes-heading">
+        <div class="section-kicker"><h2 id="episodes-heading">EPISODES</h2><span>SELECT TO WATCH</span></div>
+        <ol id="episode-list" class="episode-list" aria-label="作品を選択"></ol>
+      </aside>
+    </main>
+
+    <footer class="site-footer">
+      <p>このサイトは非公式・非営利のファンプロジェクトです。映像は <a href="https://www.youtube.com/@kanepixels" target="_blank" rel="noopener noreferrer">Kane Pixelsの公式チャンネル</a> によるもので、本サイトの日本語字幕はファン制作です。Kane Pixelsの公式サイトではありません。</p>
+      <p>字幕の公開許諾は未確認です。現在はローカル開発版で、一般公開していません。</p>
+      <p class="feedback-note">聞き取れなかった部分は字幕を空欄にしています。聞き取りや誤訳・表記についてのご意見は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSc9NBtyHeiutR_nDntLzw1rWmDzrtnpNq40uPOiIA_jsmNE9Q/viewform" target="_blank" rel="noopener noreferrer">字幕のご意見フォーム<span aria-hidden="true"> ↗</span></a>からお知らせください。</p>
+      <p class="contact-note">サイトに関するお問い合わせ：<a href="mailto:fakeseikin@gmail.com">fakeseikin@gmail.com</a></p>
+    </footer>
+  </div>
+</body>
+</html>
