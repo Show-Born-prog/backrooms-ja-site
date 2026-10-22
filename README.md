@@ -1,3 +1,5 @@
 Kane Pixels版backroomsの日本語字幕　及び　それを載せた動画を再生するサイトです
 <br>
 非公式　非営利です　日本語話者に楽しんでもらうことを第一の目的としています
+<br>
+https://show-born-prog.github.io/backrooms-ja-site/
